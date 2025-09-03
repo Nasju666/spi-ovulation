@@ -49,7 +49,7 @@ This tool can be used both for **planning pregnancy** and for **understanding fe
 
 ## 📂 Project Structure  
 ```
-📦 Ovulation-Calculator-Tracker
+📦 spi-ovulation
  ┣ 📂 app
  ┣ 📂 bootstrap
  ┣ 📂 config
