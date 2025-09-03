@@ -50,10 +50,33 @@ This tool can be used both for **planning pregnancy** and for **understanding fe
 ## 📂 Project Structure  
 ```
 📦 Ovulation-Calculator-Tracker
- ┣ 📜 index.html        # Main HTML file
- ┣ 📜 style.css         # Stylesheet for design and layout
- ┣ 📜 hear.gif          # Background animation
- ┣ 📜 README.md         # Project documentation
+ ┣ 📂 app
+ ┣ 📂 bootstrap
+ ┣ 📂 config
+ ┣ 📂 database
+ ┣ 📂 public
+ ┃ ┣ 📂 css            # Stylesheets
+ ┃ ┣ 📂 images         # Backgrounds & assets (e.g., hear.gif)
+ ┃ ┣ 📂 js             # JavaScript files
+ ┃ ┣ 📜 .htaccess
+ ┃ ┣ 📜 favicon.ico
+ ┃ ┣ 📜 index.php      # Entry point for Laravel
+ ┃ ┣ 📜 robots.txt
+ ┣ 📂 resources
+ ┃ ┣ 📂 css
+ ┃ ┣ 📂 js
+ ┃ ┣ 📂 views
+ ┃ ┃ ┗ 📜 index.blade.php   # Main application view (Ovulation Calculator & Tracker)
+ ┣ 📂 routes
+ ┃ ┣ 📜 console.php
+ ┃ ┣ 📜 web.php
+ ┣ 📂 storage
+ ┣ 📂 tests
+ ┣ 📜 .editorconfig
+ ┣ 📜 .gitattributes
+ ┣ 📜 .gitignore
+ ┣ 📜 README.md             # Project documentation
+
 ```
 
 ---
