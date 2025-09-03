@@ -64,7 +64,3 @@ It should **not** be used as a substitute for professional medical advice.
 For health concerns or family planning, please consult with a licensed healthcare provider.  
 
 ---
-
-## 👨‍💻 Authors  
-- Your Team / Group Name  
-- Year: 2025  
