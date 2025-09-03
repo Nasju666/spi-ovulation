@@ -193,3 +193,5 @@ document.getElementById('calculateAgainBtn').addEventListener('click', function 
     const currentDate = new Date();
     updateCalendar(currentDate);
 });
+
+//Kebin was here to commit atrocious crimes
