@@ -1,6 +1,6 @@
 # Ovulation Calculator & Tracker
 
-## 📌 Overview  
+## 📌 Overview   
 The **Ovulation Calculator & Tracker** is a Laravel-based web application that helps users track their menstrual cycle, calculate ovulation dates, estimate fertility windows, and predict the next expected period.  
 It also provides motivational health quotes to encourage well-being.  
 
