@@ -10,6 +10,31 @@ This system is useful for users who are **planning pregnancy** or simply **monit
 
 ## ⚙️ API Description & Features  
 
+## ✨ Features  
+- 📅 **Interactive Calendar** – Select the first day of your last period directly from the calendar.  
+- ⏳ **Cycle Length Customization** – Choose your average cycle length (21–35 days).  
+- 🌸 **Fertility Window Prediction** – Displays the most fertile 6 days, including peak days.  
+- 🔮 **Ovulation & Next Period Date** – Automatically calculates expected ovulation and next period.  
+- 💡 **Motivational Quotes** – Fetches inspirational health and wellness quotes for encouragement.  
+- 🔁 **Recalculate Easily** – Option to go back and input new details anytime.  
+
+---
+
+## 🚀 Usage  
+1. Open the application in your browser.  
+2. Select the **first day of your last period** using the date input or calendar.  
+3. Enter your **average cycle length**.  
+4. (Optional) Tick content preferences such as *Planning Pregnancy* or *Birth Control*.  
+5. Click **Calculate**.  
+6. View your results:  
+   - **Next Ovulation Date**  
+   - **Fertility Window (6-day range)**  
+   - **Next Expected Period**  
+   - **Motivational Quote**  
+7. Click **Calculate Again** if you want to reset and try another input.  
+
+---
+
 ### 🔑 Endpoints & APIs  
 
 This project uses two types of APIs:  
@@ -57,15 +82,6 @@ The system integrates with a **third-party quotes API** to display motivational 
 
 ---
 
-### 🌟 Main Features  
-- 📅 **Cycle Tracking** – User selects the first day of their last period.  
-- ⏳ **Custom Cycle Lengths** – Supports 21–35 day cycles.  
-- 🌸 **Fertility Window Prediction** – Highlights the 6 most fertile days.  
-- 🔮 **Ovulation Date & Next Period** – Automatically computed.  
-- 💡 **Motivational Quotes** – Pulled from an external API.  
-- 🎨 **Modern UI** – Interactive calendar & parallax background.  
-
----
 
 ## 🛠️ Installation & Setup  
 
