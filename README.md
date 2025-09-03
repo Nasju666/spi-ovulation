@@ -1,89 +1,135 @@
 # Ovulation Calculator & Tracker
 
 ## 📌 Overview  
-The **Ovulation Calculator & Tracker** is a web-based application designed to help users track their menstrual cycle, estimate their fertility window, predict ovulation dates, and calculate their next expected period.  
-It provides an interactive calendar, personalized fertility results, and motivational health quotes to encourage wellness and awareness.  
+The **Ovulation Calculator & Tracker** is a Laravel-based web application that helps users track their menstrual cycle, calculate ovulation dates, estimate fertility windows, and predict the next expected period.  
+It also provides motivational health quotes to encourage well-being.  
 
-This tool can be used both for **planning pregnancy** and for **understanding fertility patterns**.
-
----
-
-## ✨ Features  
-- 📅 **Interactive Calendar** – Select the first day of your last period directly from the calendar.  
-- ⏳ **Cycle Length Customization** – Choose your average cycle length (21–35 days).  
-- 🌸 **Fertility Window Prediction** – Displays the most fertile 6 days, including peak days.  
-- 🔮 **Ovulation & Next Period Date** – Automatically calculates expected ovulation and next period.  
-- 💡 **Motivational Quotes** – Fetches inspirational health and wellness quotes for encouragement.  
-- 🎨 **Animated Background** – Smooth parallax background for an engaging user experience.  
-- 🔁 **Recalculate Easily** – Option to go back and input new details anytime.  
+This system is useful for users who are **planning pregnancy** or simply **monitoring their reproductive health**.
 
 ---
 
-## 🚀 Usage  
-1. Open the application in your browser.  
-2. Select the **first day of your last period** using the date input or calendar.  
-3. Enter your **average cycle length**.  
-4. (Optional) Tick content preferences such as *Planning Pregnancy* or *Birth Control*.  
-5. Click **Calculate**.  
-6. View your results:  
-   - **Next Ovulation Date**  
-   - **Fertility Window (6-day range)**  
-   - **Next Expected Period**  
-   - **Motivational Quote**  
-7. Click **Calculate Again** if you want to reset and try another input.  
+## ⚙️ API Description & Features  
+
+### 🔑 Endpoints & APIs  
+
+This project uses two types of APIs:  
+
+#### 1. **Web API (Browser DOM API)**  
+The application leverages the built-in **Web API** to dynamically update and interact with the page. Key functions include:  
+- `document.getElementById()` → Access elements such as date input, cycle length, and results containers.  
+- `document.querySelector()` → Select elements like buttons and result placeholders.  
+- `addEventListener()` → Handle user actions such as clicking buttons, navigating the calendar, or recalculating results.  
+- `Date()` → JavaScript’s built-in date API to calculate ovulation, fertility window, and next period.  
+
+##### Example (Web API usage):  
+```javascript
+document.getElementById('calculateBtn').addEventListener('click', calculateOvulation);
+
+function calculateOvulation() {
+  const lastPeriod = document.getElementById('lastPeriod').value;
+  const cycleLength = parseInt(document.getElementById('cycleLength').value);
+
+  // Calculate ovulation date
+  const lastPeriodDate = new Date(lastPeriod);
+  const ovulationDate = new Date(lastPeriodDate);
+  ovulationDate.setDate(ovulationDate.getDate() + cycleLength - 14);
+
+  document.getElementById('ovulationDate').textContent = ovulationDate.toDateString();
+}
+```
+
+---
+
+#### 2. **External Quotes API**  
+The system integrates with a **third-party quotes API** to display motivational health quotes.  
+
+- **GET** `https://thequoteshub.com/api/`  
+  - Returns a random inspirational quote in JSON format.  
+
+##### Example Response:  
+```json
+{
+  "text": "Take care of your body. It's the only place you have to live.",
+  "author": "Jim Rohn",
+  "tags": ["health", "body", "care"]
+}
+```
+
+---
+
+### 🌟 Main Features  
+- 📅 **Cycle Tracking** – User selects the first day of their last period.  
+- ⏳ **Custom Cycle Lengths** – Supports 21–35 day cycles.  
+- 🌸 **Fertility Window Prediction** – Highlights the 6 most fertile days.  
+- 🔮 **Ovulation Date & Next Period** – Automatically computed.  
+- 💡 **Motivational Quotes** – Pulled from an external API.  
+- 🎨 **Modern UI** – Interactive calendar & parallax background.  
 
 ---
 
 ## 🛠️ Installation & Setup  
-1. Clone or download this repository.  
+
+### Requirements  
+- PHP 8.x  
+- Composer  
+- Laravel Framework (latest)  
+- Node.js & npm (for frontend assets)  
+
+### Steps  
+1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/ovulation-tracker.git
-   ```  
-2. Navigate to the project folder.  
+   git clone https://github.com/yourusername/spi-ovulation.git
+   cd spi-ovulation
+   ```
+
+2. Install dependencies:  
    ```bash
-   cd ovulation-tracker
-   ```  
-3. Open the `index.html` file in your browser.  
+   composer install
+   npm install
+   ```
+
+3. Copy `.env.example` to `.env` and configure your environment:  
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. Run migrations (if database features are added later):  
+   ```bash
+   php artisan migrate
+   ```
+
+5. Start the development server:  
+   ```bash
+   php artisan serve
+   ```
+
+6. Open in browser:  
+   ```
+   http://127.0.0.1:8000
+   ```
 
 ---
 
 ## 📂 Project Structure  
 ```
 📦 spi-ovulation
- ┣ 📂 app
- ┣ 📂 bootstrap
- ┣ 📂 config
- ┣ 📂 database
  ┣ 📂 public
- ┃ ┣ 📂 css            # Stylesheets
- ┃ ┣ 📂 images         # Backgrounds & assets (e.g., hear.gif)
- ┃ ┣ 📂 js             # JavaScript files
- ┃ ┣ 📜 .htaccess
- ┃ ┣ 📜 favicon.ico
- ┃ ┣ 📜 index.php      # Entry point for Laravel
- ┃ ┣ 📜 robots.txt
+ ┃ ┣ 📂 css             # Stylesheets
+ ┃ ┣ 📂 images          # Assets (e.g., hear.gif)
+ ┃ ┣ 📂 js              # JavaScript files
+ ┃ ┣ 📜 index.php       # Laravel entry point
  ┣ 📂 resources
- ┃ ┣ 📂 css
- ┃ ┣ 📂 js
  ┃ ┣ 📂 views
- ┃ ┃ ┗ 📜 index.blade.php   # Main application view (Ovulation Calculator & Tracker)
+ ┃ ┃ ┗ 📜 index.blade.php  # Main app UI
  ┣ 📂 routes
- ┃ ┣ 📜 console.php
- ┃ ┣ 📜 web.php
- ┣ 📂 storage
- ┣ 📂 tests
- ┣ 📜 .editorconfig
- ┣ 📜 .gitattributes
- ┣ 📜 .gitignore
- ┣ 📜 README.md             # Project documentation
-
+ ┃ ┣ 📜 web.php         # Routes definition
+ ┣ 📜 README.md         # Documentation
 ```
 
 ---
 
 ## ⚠️ Disclaimer  
-This application is for **educational and informational purposes only**.  
-It should **not** be used as a substitute for professional medical advice.  
-For health concerns or family planning, please consult with a licensed healthcare provider.  
-
----
+This tool is intended for **educational and informational purposes only**.  
+It should not be used as a substitute for medical advice.  
+For personal health or family planning decisions, consult a licensed healthcare provider.  
