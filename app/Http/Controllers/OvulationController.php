@@ -8,6 +8,6 @@ class OvulationController extends Controller
 {
     public function showCalculator()
     {
-        return view('index'); // This should match the filename of your Blade view (index.blade.php)
+        return view('index'); 
     }
 }
