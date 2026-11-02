@@ -24,3 +24,6 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Local MySQL data from Docker (recreated by `docker compose up`; contains generated keys)
+/docker-data/
